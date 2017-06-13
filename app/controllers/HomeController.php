@@ -1,10 +1,20 @@
 <?php
 namespace App\controllers;
 
+use App\models\Home;
+
 class HomeController extends BaseController
 {
+    private $model;
+
+    public function __construct()
+    {
+        $this->model = new Home();
+    }
+
     public function home()
     {
-        echo "欢迎访问这个网站";
+        $re = $this->model->getMsg();
+        var_dump($re);
     }
 }
