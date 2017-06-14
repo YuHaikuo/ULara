@@ -50,7 +50,7 @@ class Connector
         $username = Arr::get($config, 'username');
 
         $password = Arr::get($config, 'password');
-var_dump($dsn);
+
         try {
             $pdo = new PDO($dsn, $username, $password, $options);
         } catch (Exception $e) {

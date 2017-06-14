@@ -7,13 +7,13 @@ class Home extends Base
 
     protected $fillable = ['site_name', 'status'];
 
-    public function getMsg()
+    public function getOne()
     {
         /*测试读从库*/
-        return $this->where('id', 3)->get()->toArray();
+        return $this->where('id', 3)->first()->toArray();
     }
 
-    public function addMsg()
+    public function addOne()
     {
         /*测试写主库*/
         $arr = ['site_name'=>'不用猜了哈哈哈','status'=>1];

@@ -7,8 +7,8 @@ Macaw::get('test', function(){
 
 Macaw::get('', 'App\controllers\HomeController@home');
 
-Macaw::get('(:all)', function($uri){
-	echo 'Not Found '.$uri;
-});
+Macaw::$error_callback = function() {
+	throw new Exception("404 Not Found 您访问的内容不存在");
+};
 
 Macaw::dispatch();

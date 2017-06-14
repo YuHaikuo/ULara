@@ -1,12 +1,9 @@
 <?php
-use Illuminate\Database\Capsule\Manager as Capsule;
-//Autoload自动载入
-require '../vendor/autoload.php';
+//定义PUBLIC_PATH
+define('PUBLIC_PATH', __DIR__);
 
-$capsule = new Capsule;
+//启动器
+require PUBLIC_PATH.'/../bootstrap.php';
 
-$capsule->addConnection(require '../config/database.php');
-
-$capsule->bootEloquent();
-//配置路由
-require '../config/routes.php';
+//路由
+require BASE_PATH.'/config/routes.php';
