@@ -3,7 +3,7 @@ namespace Service;
 
 use BadMethodCallException;
 use UnexpectedValueException;
-use Symfony\Component\Translation\Exception\InvalidArgumentException;
+use InvalidArgumentException;
 
 class View
 {
