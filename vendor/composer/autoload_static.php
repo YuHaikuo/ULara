@@ -26,6 +26,7 @@ class ComposerStaticInit4566d4e921d63d4509fd56fa1362a1a7
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Predis\\' => 7,
         ),
         'N' => 
         array (
@@ -68,6 +69,10 @@ class ComposerStaticInit4566d4e921d63d4509fd56fa1362a1a7
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Predis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/predis/predis/src',
         ),
         'NoahBuscher\\Macaw\\' => 
         array (
