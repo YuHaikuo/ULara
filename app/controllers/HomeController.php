@@ -2,6 +2,7 @@
 namespace App\controllers;
 
 use App\models\Home;
+use Service\View;
 
 class HomeController extends BaseController
 {
@@ -14,7 +15,7 @@ class HomeController extends BaseController
 
     public function home()
     {
-        $re = $this->model->getMsg();
-        var_dump($re);
+        $re = $this->model->getOne();
+        $this->view = View::make('home')->with('home', $re);
     }
 }
