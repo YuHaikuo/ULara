@@ -16,6 +16,27 @@ class BaseController
 
     }
 
+    public function sendResponse($data, $status = 200, $contentType = 'application/json')
+    {
+        $status_header = 'HTTP/1.1 ' . $status . ' ' . $this->getStatusCodeMessage($status);
+        header($status_header);
+        header('Content-type: '. $contentType .'; charset=utf-8');
+        echo json_encode($data);
+        exit;
+    }
+
+    public function getStatusCodeMessage($status)
+    {
+        $codes = Array(
+            200 => 'OK',
+            400 => 'Bad Request',
+            403 => 'Forbidden',
+            404 => 'Not Found',
+            500 => 'Internal Server Error'
+        );
+        return (isset($codes[$status])) ? $codes[$status] : '';
+    }
+
     public function __destruct()
     {
         $view = $this->view;
