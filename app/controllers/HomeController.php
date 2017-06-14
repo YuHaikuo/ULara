@@ -18,7 +18,7 @@ class HomeController extends BaseController
     public function home()
     {
         $re = $this->model->getOne();
-        $this->view = View::make('home')->with('home', $re);
+        $this->sendResponse($re);
     }
 
     public function sendMailHand()
